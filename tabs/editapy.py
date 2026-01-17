@@ -2,15 +2,14 @@ import tkinter as tk
 from tkinter import ttk, filedialog, simpledialog
 from core.editor import Editor
 
-class EditTab:
+class EditTab(tk.Frame):
     def __init__(self, parent):
-        self.parent = parent
-        self.frame = ttk.Frame(parent)
+        super().__init__(parent)
         self.editor = Editor()
 
         # Widgets for editing
-        ttk.Label(self.frame, text="Edit / Rename Files").pack(pady=10)
-        self.rename_button = ttk.Button(self.frame, text="Rename File", command=self.rename_file)
+        ttk.Label(self, text="Edit / Rename Files").pack(pady=10)
+        self.rename_button = ttk.Button(self, text="Rename File", command=self.rename_file)
         self.rename_button.pack(pady=5)
 
     def rename_file(self):

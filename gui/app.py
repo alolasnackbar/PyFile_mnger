@@ -14,14 +14,14 @@ class App:
         self.tab_control = ttk.Notebook(self.root)
 
         # Create tabs
-        self.identify_tab = IdentifyTab(self.tab_control)
-        self.tab_control.add(self.identify_tab.frame, text='Identify')
+        self.identify_tab = IdentifyTab(self.root)
+        self.tab_control.add(self.identify_tab, text='Identify')
 
-        self.edit_tab = EditTab(self.tab_control)
-        self.tab_control.add(self.edit_tab.frame, text='Edit')
+        self.edit_tab = EditTab(self.root)
+        self.tab_control.add(self.edit_tab, text='Edit')
 
-        self.migrate_tab = MigrateTab(self.tab_control)
-        self.tab_control.add(self.migrate_tab.frame, text='Migrate')
+        self.migrate_tab = MigrateTab(self.root)
+        self.tab_control.add(self.migrate_tab, text='Migrate')
 
         self.tab_control.pack(expand=1, fill="both")
 
